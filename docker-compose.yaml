@@ -1,0 +1,10 @@
+version: "3.7"
+services:
+  portfolio: 
+    build: ./money-saving-app
+    container_name: money-saving-app_c
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./money-saving-app:/app
+      - /app/node_modules
