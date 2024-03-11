@@ -2,9 +2,10 @@ import connectDB from "@db/mongodb";
 import Transaction from "@models/Transaction";
 import { NextResponse } from "next/server";
 
-export async function POST(req, res) {
+// Doesn't Work
+export async function GET(req, { params }) {
   try {
-    const { id } = req.query;
+    const id = params.id;
     await connectDB();
     console.log("Retrieving transaction by id", id);
     const transaction = await Transaction.findById(id);
